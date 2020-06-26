@@ -8,32 +8,29 @@ import styles from './styles.module.css';
 
 const features = [
   {
-    title: <>Easy to Use</>,
+    title: <>For entomologists</>,
     imageUrl: 'img/undraw_docusaurus_mountain.svg',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        The PI2P project is a first step towards setting up an insect pests and climate observatory in the intertropical zone. Whether you are a farmer, technician or scientist, if you are monitoring insect pest populations, you can help strengthen the network. In addition we can provide you with sensors or show you how to build them.
       </>
     ),
   },
   {
-    title: <>Focus on What Matters</>,
+    title: <>For data scientists</>,
     imageUrl: 'img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        We collect real-time data on insects and climate variables. If you have skills in data visualization, you can help us with new representations. If you have skills in data analysis, browse the website, all the raw data is available, so taht you can contribute to a better understanding of the insect response to climate change in the intertropical zone.
       </>
     ),
   },
   {
-    title: <>Powered by React</>,
+    title: <>For makers and developers</>,
     imageUrl: 'img/undraw_docusaurus_react.svg',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Our data is acquired via sensors connected to an Arduino type microcontroller (PI2Puino) which transmits its information by radio to a Raspberry Pi type gateway relaying the information to a Node.js server. Whether you are a maker or a developer, your help is welcome to design new tools or improve information transfer techniques.
       </>
     ),
   },
@@ -60,7 +57,7 @@ function Home() {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Predicting Insect Pest Phenology">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>

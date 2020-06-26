@@ -23,7 +23,7 @@ module.exports = {
         // {to: 'blog', label: 'Blog', position: 'left'},
         {
           href: 'https://pi2p.ird.fr',
-          label: 'PI2P API website',
+          label: 'PI2P website',
           position: 'right',
         },
       ],
