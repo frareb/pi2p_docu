@@ -1,11 +1,11 @@
 module.exports = {
   title: 'PI2P documentation',
   tagline: 'How to contribute to the PI2P project',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://frareb.github.io',
+  baseUrl: '/pi2p_docu/',
   favicon: 'img/favicon.ico',
   organizationName: 'frareb', // Usually your GitHub org/user name.
-  projectName: 'pi2p', // Usually your repo name.
+  projectName: 'pi2p_docu', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'PI2P',
