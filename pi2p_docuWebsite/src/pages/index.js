@@ -21,7 +21,7 @@ const features = [
     imageUrl: 'img/undraw_docusaurus_tree.svg',
     description: (
       <>
-        We collect real-time data on insects and climate variables. If you have skills in data visualization, you can help us with new representations. If you have skills in data analysis, browse the website, all the raw data is available, so taht you can contribute to a better understanding of the insect response to climate change in the intertropical zone.
+        We collect real-time data on insects and climate variables. If you have skills in data visualization, you can help us with new representations. If you have skills in data analysis, browse the website, all the raw data is available, so that you can contribute to a better understanding of the insect response to climate change in the intertropical zone.
       </>
     ),
   },
