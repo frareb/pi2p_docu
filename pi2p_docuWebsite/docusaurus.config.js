@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'PI2P documentation',
-  tagline: 'How to contribute to the PI2P project',
+  title: 'Predicting Insect Pest Phenology',
+  tagline: 'Documentation and how to contribute to the project',
   url: 'https://frareb.github.io',
   baseUrl: '/pi2p_docu/',
   favicon: 'img/favicon.ico',

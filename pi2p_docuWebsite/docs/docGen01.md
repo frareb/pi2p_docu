@@ -4,6 +4,14 @@ title: Introduction
 sidebar_label: Introduction
 ---
 
+The *PI2P* project’s objectives are to develop phenological models and improve their performance by providing parameter estimates calibrated from field insect monitoring and taking into account agroecosystems parameters, and to use these models to study insect responses to climate change.
+
+All the data is gathered in the [PI2P website](https://pi2p.ird.fr) in a postgreSQL database together with its RESTfull API developed with [Node.js](https://nodejs.org) JavaScript runtime and [express](https://expressjs.com/) web application framework.
+
+This companion website describes the hardware and software to document and contribute to the *PI2P* project within two sections. The first section is dedicated to the climate and the second section to the insects.
+
+Welcome aboard and please contact us for any information.
+
 You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).
 
 ## Markdown Syntax
