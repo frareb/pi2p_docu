@@ -39,8 +39,12 @@ module.exports = {
               to: 'docs/',
             },
             {
-              label: 'Sensors',
-              to: 'docs/docSen01/',
+              label: 'Climate',
+              to: 'docs/docClim01/',
+            },
+						{
+              label: 'Insects',
+              to: 'docs/docPest01/',
             },
           ],
         },
