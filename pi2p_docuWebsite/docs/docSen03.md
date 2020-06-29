@@ -1,5 +1,5 @@
 ---
-id: mdx
+id: docSen03
 title: Powered by MDX
 ---
 
