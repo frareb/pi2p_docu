@@ -49,10 +49,45 @@ For the Atmega, some manufacturers provide them with the Arduino bootloader; you
 
 For the connectors, you need to populate at least J4 with a standard female pin header connector (2.54 mm); this connector is used to program the board using a FT232 module, that you'll need to buy somewhere. The two other headers, J1 and J3 are used to plug the sensors; it might be convenient, for a prototype board, to have pin headers on them; otherwise, solder the sensors' pins directly on the board.
 
+### 1.5. How to assemble the board?
+
+Once you've gathered the components and the board, you can grab your soldering iron, and simply follow the steps:
+
+1. start by soldering the four resistors and the two capacitors; the recommended method is to add solder to one side, place the component using this bit of solder, and once it's flat, solder the other side;
+2. then, add the LoRa module; you can start with one pin, then position the component correctly, solder the opposite pin, and it should stay in place while you're doing the others;
+3. you can then add the microcontroller; if you want to have the batteries on the board, you need to solder it "from the top", to prevent the solder blobs from being on the batteries casing;
+4. do not forget to make a short between the antenna and the LoRa module (pad L1), if you're not using any impedance-matching network;
+5. finally add the batteries and pins as desired.
+
+### 1.6. How to flash bootloader to the board?
+
+So now you've got a perfect board, but how can you program it? Well, first, if you choose an AtMega that has no bootloader on it, you must flash the bootloader to it. A bootloader is a small program that will allow us to program the board standalone, without using an external programmer. For this step, you'll need an Arduino, or an AtMega programmer; it is only needed once, to flash the bootloader. Start by flashing the ArduinoISP sketch onto your Arduino board (can be found on the IDE in File > Examples > ArduinoISP).
+
+Once you've flashed the ArduinoISP sketch, connect your Arduino ISP pins into the ISP pins of the PI2Puino; the ISP pins are a dual-row male header on the board, you should see it immediately; the pins are the same on the two boards, and look like this:
+
+![](https://www.arduino.cc/en/uploads/Tutorial/ICSPHeader.jpg)
+
+Once you've connected everything, plug the Arduino (you **must** remove the batteries from PI2Puino before), and open the IDE to install MiniCore, as documented on [this page](https://github.com/MCUdude/MiniCore#how-to-install). Once installed, go to the "Tools" menu, and make the following configuration:
+
+- board: MiniCore > AtMega328
+- clock: Internal 4MHz
+- BOD: BOD 1.8V
+- variant: 328P/PA
+- bootloader: Yes (UART0)
+- programmer: Arduino as ISP (MiniCore)
+
+Finally, press the "Burn bootloader" button, and just wait for the operation to complete; if it fails, check your wiring.
+
+### 1.7. How to program the board?
+
+Finally! You got the components, made the board, flashed the bootloader, now it's time to program it for real! To do this, you need (as stated above) a serial programming interface, for instance a FT232 module; the board as a connector (J4) that suits perfectly for this module, so just plug it in, plug your computer to the module, and upload a program using the same configuration as above. Your program should now work perfectly!
+
 ## 2. Alternatives
 
 If you're looking at experimenting with the project before joining the network, then you might be interested in making a single prototype board with no overhead for development purposes. In this case, you can use any Arduino to make a demo board.
 
-### 2.1. Arduino pro mini 3.3V
+### 2.1. What connections need to be made?
 
-### 2.2. Arduino Nano
+The example below gives you a way to connect the RFM95 to an Arduino Nano; you can use any kind of board, *if it is 3V3-compatible*. Once the RFM95 is connected, you can connect any sensors you like, and connect the batteries you need.
+
+![](/pi2p_docu/img/Arduino_Nano_RFM95.png)
