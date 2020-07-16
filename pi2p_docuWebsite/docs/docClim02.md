@@ -96,13 +96,13 @@ The example below gives you a way to connect the RFM95 to an Arduino Nano; you c
 
 ## 3. Adding sensors and programming the board
 
-Once your board is ready, you'll need to add connect sensors to it; this section aims to explain the three simple steps to do it:
+Once your board is ready, you'll need to connect sensors to it; this section aims to explain the three simple steps to do it:
 
 - generating an ecnryption key;
 - copying the example code, and making it run;
 - adding custom sensors.
 
-In this section, we're supposed to have downloaded the entire [`Task03` directory](https://github.com/frareb/pi2p/tree/master/Task03) of the main Github repository.
+In this section, you're supposed to have downloaded the entire [`Task03` directory](https://github.com/frareb/pi2p/tree/master/Task03) of the main Github repository.
 
 ### 3.1. How to generate a key?
 
