@@ -67,6 +67,8 @@ Once you've flashed the ArduinoISP sketch, connect your Arduino ISP pins into th
 
 ![](https://www.arduino.cc/en/uploads/Tutorial/ICSPHeader.jpg)
 
+**Be careful** : do not connect the Arduino reset pin to the ISP reset pin of the PI2Puino; instead, use pin D10 of the Arduino as a reset pin.
+
 Once you've connected everything, plug the Arduino (you **must** remove the batteries from PI2Puino before), and open the IDE to install MiniCore, as documented on [this page](https://github.com/MCUdude/MiniCore#how-to-install). Once installed, go to the "Tools" menu, and make the following configuration:
 
 - board: MiniCore > AtMega328
