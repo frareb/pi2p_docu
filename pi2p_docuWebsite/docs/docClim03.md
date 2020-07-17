@@ -38,6 +38,7 @@ Once you have the key, you can simply go to the `sit_final` repository; the file
 ```bash
 sudo python3 setup.py build
 sudo python3 setup.py install
+pip3 install adafruit-circuitpython-rfm9x
 ```
 
 Nothing should go wrong, and you can now go to the `gateway` directory, and edit the file `forward.py`, to match the following:

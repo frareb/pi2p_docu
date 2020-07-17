@@ -90,14 +90,14 @@ Finally, press the "Burn bootloader" button, and just wait for the operation to 
 
 Finally! You got the components, made the board, flashed the bootloader, now it's time to program it for real! To do this, you need (as stated above) a serial programming interface, for instance a FT232 module; the board as a connector (J4) that suits perfectly for this module, so just plug it in:
 
-- PI2Puino J4 pin 1 GND to the FT232 GND
-- PI2Puino J4 pin 2 NC to nothing
-- PI2Puino J4 pin 3 VCC to the FT232 VCC
-- PI2Puino J4 pin 4 TX to the FT232 RX
-- PI2Puino J4 pin 5 RX to the FT232 TX
-- PI2Puino J4 pin 6 DTR to the FT232 DTR
+- PI2Puino J4 pin 1 GND to the FT232 GND;
+- PI2Puino J4 pin 2 NC to nothing;
+- PI2Puino J4 pin 3 VCC to the FT232 VCC;
+- PI2Puino J4 pin 4 TX to the FT232 RX **or** the FT232 TX;
+- PI2Puino J4 pin 5 RX to the FT232 TX **or** the FT232 RX;
+- PI2Puino J4 pin 6 DTR to the FT232 DTR.
 
-Then, plug your computer to the module, and upload a program using the same configuration as above. Your program should now work perfectly!
+Depending on your serial module, pins RX and TX may or may not be reversed; you'll need to adapt the RX/TX matching on the board in order to program it. Then, plug your computer to the module, and upload a program using the same configuration as above. Your program should now work perfectly!
 
 ## 2. Alternatives
 
@@ -113,13 +113,23 @@ The example below gives you a way to connect the RFM95 to an Arduino Nano; you c
 
 Once your board is ready, you'll need to connect sensors to it; this section aims to explain the three simple steps to do it:
 
-- generating an ecnryption key;
+- generating an encryption key;
 - copying the example code, and making it run;
 - adding custom sensors.
 
 In this section, you're supposed to have downloaded the entire [`Task03` directory](https://github.com/frareb/pi2p/tree/master/Task03) of the main Github repository.
 
-### 3.1. How to generate a key?
+### 3.1. What are the required dependencies?
+
+You need to install the following modules; to do it, simply download the ZIP from Github, and unzip it into you `Arduino/library` directory:
+
+- [RadioHead](http://www.airspayce.com/mikem/arduino/RadioHead/RadioHead-1.108.zip);
+- [Adafruit Sensor library](https://github.com/adafruit/Adafruit_Sensor/archive/1.1.4.zip);
+- [Adafruit DHT11/22 library](https://github.com/adafruit/DHT-sensor-library/archive/1.3.10.zip);
+- [OneWire library](http://downloads.arduino.cc/libraries/github.com/PaulStoffregen/OneWire-2.3.5.zip);
+- [Dallas Temperature](https://github.com/milesburton/Arduino-Temperature-Control-Library/archive/3.7.9.zip).
+
+### 3.2. How to generate a key?
 
 Communication between the board and the gateway is encrypted; in order for this encryption to work, you'll need to generate a secured key. There are several ways to do this, an one is to use [this random hexadecimal generator](https://www.browserling.com/tools/random-hex), and generate 16-digit codes; for example, we'll take "123456789ABCDEF0".
 
@@ -132,17 +142,17 @@ gcc -o key_expand sit.c example_key_expand.c
 
 You should get something like: `Expanded key: 55BA BDCC 410C 4C2F E555`, which is your expanded key; keep it in mind, as you'll need to configure it on both the gateway and the sensor board.
 
-### 3.2. How to configure the demo?
+### 3.3. How to configure the demo?
 
 Once you've downloaded the entire `Task03` directory, copy the files `sit.c` and `sit.h` from `sit_final` into the `rfm95_arduino` directory, and rename `sit.c` into `sit.cpp`. When this is done, you can open the `rfm95_arduino` code inside the Arduino IDE.
 
 First, begin by adding your expanded key after `uint16_t key[5] =` in the Arduino file; this will ensure proper encryption on this side. You can then compile and upload the sketch, as documented in 1.7. You should see no error, and your board is now sending data!
 
-### 3.3. What are the default sensors?
+### 3.4. What are the default sensors?
 
 In the given Arduino sketch, two sensors are preconfigured: a *DS18B20*, that you'll need to connect to the `OW` (or `D9`) pin, and a `DHT11`, that works using some custom protocol, so it is connected to `D7` but you ca easily change this pin.
 
-### 3.4. How to add custom sensors?
+### 3.5. How to add custom sensors?
 
 The demo provides very useful functions that you may want to use in order to add custom sensors to the board; usually, you will start with a library setup inside the `setup` function. Once it's done, you can do the measurements at the beginning of the loop, and send data at the end - before going to sleep, take for example this loop code:
 
