@@ -61,7 +61,13 @@ Once you've gathered the components and the board, you can grab your soldering i
 
 ### 1.6. How to flash bootloader to the board?
 
-So now you've got a perfect board, but how can you program it? Well, first, if you choose an AtMega that has no bootloader on it, you must flash the bootloader to it. A bootloader is a small program that will allow us to program the board standalone, without using an external programmer. For this step, you'll need an Arduino, or an AtMega programmer; it is only needed once, to flash the bootloader. Start by flashing the ArduinoISP sketch onto your Arduino board (can be found on the IDE in File > Examples > ArduinoISP).
+So now you've got a perfect board, but how can you program it? Well, first, if you choose an AtMega that has no bootloader on it, you must flash the bootloader to it. A bootloader is a small program that will allow us to program the board standalone, without using an external programmer. For this step, you'll need an Arduino, or an AtMega programmer; it is only needed once, to flash the bootloader. Start by flashing the ArduinoISP sketch onto your Arduino board :
+
+1. download and install the Arduino IDE at https://www.arduino.cc/ (v1.8.13 or higher);
+2. connect an Arduino board to your computer (USB port);
+3. open the Arduino IDE, in Tools > Port, select the appropriate port; in Tools > Board, the corresponding Arduino board;
+4. open the ArduinoISP sketch in Files > Examples > ArduinoISP;
+5. flash the sketch in Sketch > Upload.
 
 Once you've flashed the ArduinoISP sketch, connect your Arduino ISP pins into the ISP pins of the PI2Puino; the ISP pins are a dual-row male header on the board, you should see it immediately; the pins are the same on the two boards, and look like this:
 
@@ -78,11 +84,20 @@ Once you've connected everything, plug the Arduino (you **must** remove the batt
 - bootloader: Yes (UART0)
 - programmer: Arduino as ISP (MiniCore)
 
-Finally, press the "Burn bootloader" button, and just wait for the operation to complete; if it fails, check your wiring.
+Finally, press the "Burn bootloader" button, and just wait for the operation to complete (`avrdude done.  Thank you.`); if it fails, check your wiring.
 
 ### 1.7. How to program the board?
 
-Finally! You got the components, made the board, flashed the bootloader, now it's time to program it for real! To do this, you need (as stated above) a serial programming interface, for instance a FT232 module; the board as a connector (J4) that suits perfectly for this module, so just plug it in, plug your computer to the module, and upload a program using the same configuration as above. Your program should now work perfectly!
+Finally! You got the components, made the board, flashed the bootloader, now it's time to program it for real! To do this, you need (as stated above) a serial programming interface, for instance a FT232 module; the board as a connector (J4) that suits perfectly for this module, so just plug it in:
+
+- PI2Puino J4 pin 1 GND to the FT232 GND
+- PI2Puino J4 pin 2 NC to nothing
+- PI2Puino J4 pin 3 VCC to the FT232 VCC
+- PI2Puino J4 pin 4 TX to the FT232 RX
+- PI2Puino J4 pin 5 RX to the FT232 TX
+- PI2Puino J4 pin 6 DTR to the FT232 DTR
+
+Then, plug your computer to the module, and upload a program using the same configuration as above. Your program should now work perfectly!
 
 ## 2. Alternatives
 
@@ -135,7 +150,7 @@ The demo provides very useful functions that you may want to use in order to add
 void loop() {
   // Update timestamps in queue
   stored_pkts_refresh();
-  
+
   // Read sensors values
   sensors_event_t humidity_results;
 
