@@ -12,9 +12,11 @@ Two methods are proposed for gathering on-site measurements:
 
 The PI2Puino is a very integrated board, that includes the LoRa module (with an embedded antenna), an Arduino-compatible microcontroller and a battery holder; it was designed specifically for the PI2P project, and is provided with a complete casing system.
 
+![](/pi2p_docu/img/kicadPi2Puino.jpg)
+
 ### 1.1. How to get it?
 
-PI2P is a research project, so you'll likely need to make your own boards. Anyway, if there's a local research laboratory near you that's already part of the network, you might contact them to get a small batch of boards. If you need to make it yourself, *don't panic*, as the process is quite easy, and doesn't require expensives tools.
+PI2P is a research project, so you'll likely need to make your own boards. Anyway, if there's a local research laboratory near you that's already part of the network, you might contact them to get a small batch of boards (see https://pi2p.ird.fr/graphs/network for finding the nearest institution involved in the PI2P project). If you need to make it yourself, *don't panic*, as the process is quite easy, and doesn't require expensive tools.
 
 ### 1.2. What tools do I need?
 
@@ -22,13 +24,13 @@ In order to make the board, you'll need a soldering iron, and... that's it! The 
 
 ### 1.3. How to make the PCB?
 
-You can take two paths here: either make the board in local facilities, but please make sure to meet the minimal requirements below. Otherwise, the recommended way is to send it to a professionnal PCB manufacturer of your choice. For either of theses choices, you'll need, at least, to be able to respect the following criterias:
+You can take two paths here: either make the board in local facilities, but please make sure to meet the minimal requirements below. Otherwise, the recommended way is to send it to a professional PCB manufacturer of your choice. For either of theses choices, you'll need, at least, to be able to respect the following criterias:
 
 - the board needs to have a solder mask; this is because they will be exposed to harsh meteorological conditions, and a solder mask protects the copper layers for oxidation;
 - for the same reasons as above, please use tainted vias when making the board;
 - the minimal requirements are: 2 layers board with 1oz copper, 0.6mm trace width, 0.3mm clearance, 0.8mm via size, 0.4mm via drill.
 
-Once you've arranged all of these requirements with your PCB manufacturer, then you can download the Gerber files [here](example.org), and just send them; the board size is 97x47mm, so you may panelize it (1x2 or 2x4) to get a better price.
+Once you've arranged all of these requirements with your PCB manufacturer, then you can download the Gerber files [here](/pi2p_docu/pi2puino/Gerber.zip), and just send them; the board size is 97x47mm, so you may panelize it (1x2 or 2x4) to get a better price.
 
 ### 1.4. What components do I need?
 
