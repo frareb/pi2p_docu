@@ -87,6 +87,8 @@ Once you've flashed the ArduinoISP sketch, connect your Arduino ISP pins into th
 Do not connect the Arduino reset pin to the ISP reset pin of the PI2Puino; instead, use pin D10 of the Arduino as a reset pin.
 :::
 
+![](/pi2p_docu/img/fritzing_pi2puino_bootLoader.png)
+
 Once you've connected everything, plug the Arduino (you **must** remove the batteries from PI2Puino before), and open the IDE to install MiniCore, as documented on [this page](https://github.com/MCUdude/MiniCore#how-to-install). Once installed, go to the "Tools" menu, and make the following configuration:
 
 - board: MiniCore > AtMega328
@@ -110,6 +112,8 @@ Finally! You got the components, made the board, flashed the bootloader, now it'
 - PI2Puino J4 pin 6 DTR to the FT232 DTR.
 
 Depending on your serial module, pins RX and TX may or may not be reversed; you'll need to adapt the RX/TX matching on the board in order to program it. Then, plug your computer to the module, and upload a program using the same configuration as above. Your program should now work perfectly!
+
+![](/pi2p_docu/img/fritzing_pi2puino_toUSB.png)
 
 ## 2. Alternatives
 
@@ -162,7 +166,7 @@ First, begin by adding your expanded key after `uint16_t key[5] =` in the Arduin
 
 ### 3.4. What are the default sensors?
 
-In the given Arduino sketch, two sensors are preconfigured: a *DS18B20*, that you'll need to connect to the `OW` (or `D9`) pin, and a `DHT11`, that works using some custom protocol, so it is connected to `D7` but you ca easily change this pin.
+In the given Arduino sketch, two sensors are preconfigured: a *DS18B20*, that you'll need to connect to the `OW` (or `D9`) pin, and a `DHT11`/`DHT22`, that works using some custom protocol, so it is connected to `D7` but you ca easily change this pin.
 
 ### 3.5. How to add custom sensors?
 
