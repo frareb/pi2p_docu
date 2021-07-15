@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[41],{177:function(o){o.exports=JSON.parse('{"allTagsPath":"/pi2p_docu/blog/tags","slug":"communication","name":"communication","count":4,"permalink":"/pi2p_docu/blog/tags/communication"}')}}]);
